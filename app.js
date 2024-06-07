@@ -11,6 +11,7 @@ document.getElementById("submit").addEventListener("click", function () {
     // let ninePrizecount = document.getElementById('ninePrize').value;
     // let tenPrizecount = document.getElementById('tenPrize').value;
     // let elevenPrizecount = document.getElementById('elevenPrize').value;
+    // 
 
  
     
@@ -47,10 +48,15 @@ document.getElementById("submit").addEventListener("click", function () {
 
     let subTotalResult = parseFloat(subtotal.toFixed(2));
 
+    let tax = (subtotal*3.21)/100;
+    let taxresult = parseFloat(tax.toFixed(2));
+
+
     // let taxresult = parseFloat(tax1.toFixed(2) + parseFloat(tax2.toFixed(2)));
   
  
-    const total = subTotalResult;
+    const total = subTotalResult + tax;
+    const totalresult = parseFloat(total.toFixed(2));
     
   
 
@@ -65,14 +71,15 @@ document.getElementById("submit").addEventListener("click", function () {
     // document.getElementById("ninePrizeChange").innerText = ninePrize;
     // document.getElementById("tentPrizeChange").innerText = tenPrize;
     // document.getElementById("elevenPrizeChange").innerText = elevenPrize;
+    document.getElementById("tax").innerText = taxresult;
 
   
     
     
     document.getElementById("dateChange").innerText = date;
     //   document.getElementById("exDateChange").innerText = exDate;
-    document.getElementById("subtotalChange").innerText = total;
-    document.getElementById("totalChange").innerText = total;
+    document.getElementById("subtotalChange").innerText = subTotalResult;
+    document.getElementById("totalChange").innerText = totalresult;
     // document.getElementById("cashUpdate").innerText = cashPrize;
     // document.getElementById("changeUpdate").innerText = ChangePrizeRound;
     // document.getElementById("randomOrder").innerText = randomOrder;
